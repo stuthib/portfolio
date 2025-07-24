@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .w-fill-available {
+        width: -webkit-fill-available;
+        width: -moz-available; /* for Firefox */
+    }
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.vertical-timeline::before {
+    width: 1px !important;
+    background-color: rgb(20 184 166 / var(--tw-bg-opacity, 1));
+}
+
+.vertical-timeline-element-content {
+    background-color: rgb(213 226 225 / 10%) !important;
+}
+
+.ReactModal__Overlay {
+    z-index: 99;
+}

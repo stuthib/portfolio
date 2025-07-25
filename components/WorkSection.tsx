@@ -14,7 +14,8 @@ type WorkProps = {
   from: string,
   to: string,
   descriptions: Array<string>,
-  logo?: string
+  logo?: string,
+  location: string
 }
 
 const works: Array<WorkProps> = [
@@ -28,7 +29,8 @@ const works: Array<WorkProps> = [
       'Led a proof-of-concept (PoC) to migrate REST APIs to GraphQL using NestJS, demonstrating improved query efficiency and flexibility for frontend clients.',
       'Architected and initialized a new React application to serve as the client interface using GraphQL APIs, establishing the foundation for a scalable frontend platform.'
     ],
-    logo: 'cadstrom'
+    logo: 'cadstrom',
+    location: 'Montreal, QC'
   },
   {
     name: 'First Resonance',
@@ -42,7 +44,8 @@ const works: Array<WorkProps> = [
       'Implemented, maintained, and enhanced design system components.',
       'Enhanced the applications’ performance by more than 50% by implementing client side caching using Apollo and URQL.'
     ],
-    logo: 'FR'
+    logo: 'FR',
+    location: 'Los Angeles, CA'
   },
   {
     name: 'Drivewealth LLC',
@@ -54,7 +57,8 @@ const works: Array<WorkProps> = [
       'Led the development and re-architecture of the wealth management dashboard application, skillfully building reusable components using React, React Hooks, and Redux.',
       'Implemented features such as search, sort, filtering, pagination etc. on different dashboard views containing tabular data along with exporting the data in CSV format.'
     ],
-    logo: 'DW'
+    logo: 'DW',
+    location: 'Chatam, NJ'
   },
   {
     name: 'Freelance',
@@ -65,7 +69,8 @@ const works: Array<WorkProps> = [
       'Designed and developed custom websites for boutique and medium sized suites.',
       'Worked on building a music dashboard application using spotify APIs, to enable multiple users to connect to a host.'
     ],
-    logo: 'stuthi'
+    logo: 'stuthi',
+    location: 'NYC, NY'
   },
   {
     name: 'Balbix Inc',
@@ -74,7 +79,8 @@ const works: Array<WorkProps> = [
     from: 'November 2017',
     to: 'November 2018',
     descriptions: ['Responsible for architecting and developing user intensive dashboard features using ReactJS, Material UI, Victory Chart, Lodash, Javascript.'],
-    logo: 'balbix'
+    logo: 'balbix',
+    location: 'San Jose, CA'
   },
   {
     name: 'eGain Solutions',
@@ -83,7 +89,8 @@ const works: Array<WorkProps> = [
     from: 'March 2016',
     to: 'November 2017',
     descriptions: ['Built customized web packages for small and medium scale suites.'],
-    logo: 'egain'
+    logo: 'egain',
+    location: 'Sunnyvale, CA'
   },
 ]
 
@@ -99,11 +106,14 @@ function Work({ work }: { work: WorkProps }) {
             work.logo === 'stuthi'
             ? <span className='flex justify-around h-10 items-center text-teal-500 font-bold text-2xl'>S</span> 
             :
-              <Image alt="" className={`w-fit rounded-full ${work.logo === 'egain' ? 'mt-4' : ''}`} src={`/work_logos/${work.logo}.png`} />
+              <Image alt="" width={20} height={20} className={`w-fit rounded-full ${work.logo === 'egain' ? 'mt-4' : ''}`} src={`/work_logos/${work.logo}.png`} />
         }
       >
         <div className='flex flex-col gap-2'>
-          <span className='text-underline'>{work.name}</span>
+          <div className="flex items-center justify-between">
+            <span>{work.name}</span>
+            <span className="text-sm text-gray-500">{work.location}</span>
+          </div>
           <span className='font-bold text-teal-500'>{work.title}</span>
           {
             <ul className={`${work.descriptions?.length > 1 ? 'list-disc' : ''} px-4`}>

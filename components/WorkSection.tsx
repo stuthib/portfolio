@@ -106,7 +106,7 @@ function Work({ work }: { work: WorkProps }) {
             work.logo === 'stuthi'
             ? <span className='flex justify-around h-10 items-center text-teal-500 font-bold text-2xl'>S</span> 
             :
-              <Image alt="" width={20} height={20} className={`w-fit rounded-full ${work.logo === 'egain' ? 'mt-4' : ''}`} src={`/work_logos/${work.logo}.png`} />
+              <Image alt="" width={40} height={40} className={`w-fit rounded-full ${work.logo === 'egain' ? 'mt-4' : ''}`} src={`/work_logos/${work.logo}.png`} />
         }
       >
         <div className='flex flex-col gap-2'>

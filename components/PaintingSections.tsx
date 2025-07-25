@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import Modal from 'react-modal';
 
@@ -15,7 +16,7 @@ const customStyles = {
 const PaintingSection = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
     return (
         <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
-            <img src="/paintings.jpg" width='400px' height='400px' />
+            <Image src="/paintings.jpg" alt="" width={400} height={400} />
         </Modal>
         
     )

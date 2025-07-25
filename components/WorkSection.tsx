@@ -4,6 +4,7 @@ import React, { useRef } from "react"
 import Link from "next/link"
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css';
+import Image from "next/image";
 
 
 type WorkProps = {
@@ -98,7 +99,7 @@ function Work({ work }: { work: WorkProps }) {
             work.logo === 'stuthi'
             ? <span className='flex justify-around h-10 items-center text-teal-500 font-bold text-2xl'>S</span> 
             :
-              <img className={`w-fit rounded-full ${work.logo === 'egain' ? 'mt-4' : ''}`} src={`/work_logos/${work.logo}.png`} />
+              <Image alt="" className={`w-fit rounded-full ${work.logo === 'egain' ? 'mt-4' : ''}`} src={`/work_logos/${work.logo}.png`} />
         }
       >
         <div className='flex flex-col gap-2'>

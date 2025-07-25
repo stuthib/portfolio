@@ -3,6 +3,7 @@ import React from "react"
 import { Link, Button } from "react-scroll/modules"
 import { HiArrowDown } from "react-icons/hi"
 import { MdArrowOutward } from "react-icons/md"
+import Image from "next/image"
 
 const HeroSection = () => {
   const onConnectClick = () => {
@@ -13,7 +14,7 @@ const HeroSection = () => {
     <section id="home">
       <div className="flex flex-col text-center items-center justify-center animate-fadeIn animation-delay-2 my-10 py-16 sm:py-32 md:py-40 md:flex-row md:space-x-4 md:text-left">
         <div className="md:mt-2 md:w-1/2">
-          <img
+          <Image
             src="/bio_img.png"
             alt=""
             width={325}
@@ -41,7 +42,7 @@ const HeroSection = () => {
               offset={-100}
               duration={500}
             >
-              Let's connect!
+              Let&#39;s connect!
             </Button>
             <Button
               to=''
